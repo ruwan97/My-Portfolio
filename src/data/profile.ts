@@ -7,6 +7,8 @@ export const profile = {
   name: 'Ruwan Chamikara',
   shortName: 'Ruwan',
   title: 'Software Engineer | FinTech',
+  // true shows an "Open to new opportunities" badge and job-seeking text. Keep false while employed.
+  openToWork: false,
   roles: ['Backend Engineer', 'FinTech Developer', 'Full Stack Developer', 'Flutter Developer'],
   location: 'Western Province, Sri Lanka',
   avatar: 'https://github.com/ruwan97.png',

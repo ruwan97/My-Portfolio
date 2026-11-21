@@ -308,7 +308,7 @@ export function Contact() {
               Let’s build something <span className="text-gradient">reliable</span> together.
             </h2>
             <p className="mx-auto mt-5 max-w-lg text-slate-400">
-              Open to backend, FinTech and full-stack roles, freelance work and collaborations. The fastest way to reach me is on LinkedIn.
+              {profile.openToWork ? 'Open to FinTech and full-stack roles, freelance work and collaborations.' : 'Happy to connect about FinTech, software engineering and collaborations.'} The fastest way to reach me is on LinkedIn.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3">
               <a href={profile.socials.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-ink transition hover:bg-accent">

@@ -15,6 +15,7 @@ export function Hero() {
     <section id="top" className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-center px-5 pb-16 pt-28 md:px-8">
       <div className="grid grid-cols-[minmax(0,1fr)] items-center gap-16 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">
         <div>
+          {profile.openToWork && (
           <motion.div {...item(0.1)} className="inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/5 px-3 py-1.5 text-xs text-emerald-300">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
@@ -22,6 +23,7 @@ export function Hero() {
             </span>
             Open to new opportunities
           </motion.div>
+          )}
 
           <motion.p {...item(0.2)} className="mt-6 font-mono text-sm text-slate-400">Hi, I’m</motion.p>
           <motion.h1 {...item(0.3)} className="mt-2 font-display text-[2.75rem] font-bold leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl">
