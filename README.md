@@ -1,7 +1,7 @@
 # Ruwan Chamikara — Portfolio
 
 Modern, dark, animated developer portfolio.
-**Live:** https://ruwan97.github.io/My-Portfolio/
+**Live:** https://ruwan97.github.io
 
 Built with **React 19 · TypeScript · Vite · Tailwind CSS v4 · Motion (Framer Motion)**.
 
@@ -14,7 +14,7 @@ You can edit it straight from the GitHub mobile app or github.com — every push
 - `education[0].degree` — add your degree
 
 ## Hosting (free, GitHub Pages)
-1. Repo: `ruwan97/My-Portfolio` (must be public for free GitHub Pages).
+1. Repo name must be **`ruwan97.github.io`** and public.
 2. Repo → **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 3. Push to `main`. The workflow in `.github/workflows/deploy.yml` builds and publishes the site.
 
