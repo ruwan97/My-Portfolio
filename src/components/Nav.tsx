@@ -39,7 +39,7 @@ export function Nav() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className="fixed inset-x-0 top-3 z-50 flex justify-center px-4"
       >
-        <nav className={`flex w-full max-w-5xl items-center justify-between rounded-2xl px-4 py-2.5 transition-all duration-300 ${scrolled ? 'glass shadow-lg shadow-black/40' : 'border border-transparent'}`}>
+        <nav className={`flex w-full max-w-5xl items-center justify-between rounded-2xl px-4 py-2.5 transition-all duration-300 ${scrolled ? 'border border-white/10 bg-[#0b0d14]/90 shadow-lg shadow-black/40 backdrop-blur-xl' : 'border border-transparent'}`}>
           <a href="#top" className="font-display text-lg font-bold tracking-tight text-white">
             ruwan<span className="text-accent">.</span>dev
           </a>
