@@ -34,9 +34,7 @@ export function Nav() {
     <>
       <motion.div style={{ scaleX: progress }} className="fixed inset-x-0 top-0 z-[60] h-[2px] origin-left bg-gradient-to-r from-accent via-indigo-400 to-accent2" />
       <motion.header
-        initial={{ y: -40, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+        initial={false}
         className="fixed inset-x-0 top-3 z-50 flex justify-center px-4"
       >
         <nav className={`flex w-full max-w-5xl items-center justify-between rounded-2xl px-4 py-2.5 transition-all duration-300 ${scrolled ? 'border border-white/10 bg-[#0b0d14]/90 shadow-lg shadow-black/40 backdrop-blur-xl' : 'border border-transparent'}`}>

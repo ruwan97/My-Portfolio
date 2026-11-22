@@ -2,7 +2,7 @@ import { motion } from 'motion/react'
 import { ArrowUpRight, Briefcase, CreditCard as CardIcon, Play, CreditCard, Gauge, GraduationCap, Mail, ShieldCheck, Wallet } from 'lucide-react'
 import { about, education, experience, focus, marquee, profile, projects, showcase, skillGroups } from '../data/profile'
 import { duration, useLiveStats } from '../lib/live'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Counter, GithubIcon, LinkedinIcon, Reveal, SectionHeading, SpotCard } from './ui'
 
 const focusIcons = [Wallet, CreditCard, Gauge, ShieldCheck]
@@ -170,6 +170,16 @@ export function Experience() {
 
 export function Showcase() {
   const [playing, setPlaying] = useState(false)
+  const [near, setNear] = useState(false)
+  const boxRef = useRef<HTMLDivElement>(null)
+  // Don't download the video until it's close to the screen — keeps first load fast.
+  useEffect(() => {
+    const el = boxRef.current
+    if (!el) return
+    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setNear(true); io.disconnect() } }, { rootMargin: '600px 0px' })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
   return (
     <section id="product" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-24 md:px-8 md:py-32">
       <SectionHeading index="04" kicker="Product I build" title={<>The app my code <span className="text-gradient">runs behind</span></>} />
@@ -177,12 +187,16 @@ export function Showcase() {
         <Reveal>
           <div className="relative">
             <div className="absolute -inset-1 rounded-3xl bg-gradient-to-br from-pink-500/50 via-fuchsia-500/20 to-pink-300/40 blur-lg" />
-            <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/10 bg-panel">
+            <div ref={boxRef} className="relative aspect-video overflow-hidden rounded-2xl border border-white/10 bg-panel">
               {playing ? (
                 <video className="absolute inset-0 h-full w-full object-cover" src={showcase.video} poster={showcase.poster} autoPlay controls playsInline />
               ) : (
                 <button onClick={() => setPlaying(true)} aria-label={`Play ${showcase.name} video`} className="group absolute inset-0 h-full w-full">
-                  <video className="absolute inset-0 h-full w-full object-cover" src={showcase.video} poster={showcase.poster} autoPlay muted loop playsInline />
+                  {near ? (
+                    <video className="absolute inset-0 h-full w-full object-cover" src={showcase.video} poster={showcase.poster} autoPlay muted loop playsInline preload="auto" />
+                  ) : (
+                    <img src={showcase.poster} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent" />
                   <span className="absolute bottom-4 right-4 flex h-12 w-12 items-center justify-center rounded-full bg-white text-ink shadow-2xl shadow-pink-500/40 transition group-hover:scale-110">
                     <Play size={20} className="ml-0.5 fill-current" />

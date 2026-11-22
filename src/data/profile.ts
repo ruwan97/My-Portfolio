@@ -11,7 +11,7 @@ export const profile = {
   openToWork: false,
   // Google Analytics 4 Measurement ID, e.g. 'G-AB12CD34EF'. Leave '' to turn analytics off.
   analyticsId: '',
-  roles: ['Backend Engineer', 'FinTech Developer', 'Full Stack Developer', 'Flutter Developer'],
+  roles: ['Software Engineer', 'Backend Engineer', 'FinTech Developer', 'Full Stack Developer', 'Flutter Developer'],
   location: 'Western Province, Sri Lanka',
   avatar: 'https://github.com/ruwan97.png',
   tagline:

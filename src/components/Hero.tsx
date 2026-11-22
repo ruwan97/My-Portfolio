@@ -5,9 +5,9 @@ import { GithubIcon, LinkedinIcon, Typewriter } from './ui'
 
 const ease = [0.22, 1, 0.36, 1] as const
 const item = (d: number) => ({
-  initial: { opacity: 0, y: 30 },
+  initial: { opacity: 0, y: 14 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.8, delay: d, ease },
+  transition: { duration: 0.5, delay: d * 0.3, ease },
 })
 
 export function Hero() {
@@ -25,16 +25,16 @@ export function Hero() {
           </motion.div>
           )}
 
-          <motion.p {...item(0.2)} className="mt-6 font-mono text-sm text-slate-400">Hi, I’m</motion.p>
-          <motion.h1 {...item(0.3)} className="mt-2 font-display text-[2.75rem] font-bold leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl">
+          <p className="mt-6 font-mono text-sm text-slate-400">Hi, I’m</p>
+          <h1 className="mt-2 font-display text-[2.75rem] font-bold leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl">
             {profile.name}
-          </motion.h1>
+          </h1>
           <motion.div {...item(0.45)} className="mt-4 h-[1.3em] font-display text-2xl font-semibold sm:text-3xl md:text-4xl">
             <Typewriter words={profile.roles} />
           </motion.div>
-          <motion.p {...item(0.6)} className="mt-6 max-w-xl text-base leading-relaxed text-slate-400 md:text-lg">
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-400 md:text-lg">
             {profile.tagline}
-          </motion.p>
+          </p>
 
           <motion.div {...item(0.75)} className="mt-8 flex flex-wrap items-center gap-3">
             <a href="#projects" className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-accent to-indigo-400 px-5 py-3 text-sm font-semibold text-ink shadow-lg shadow-cyan-500/20 transition hover:shadow-cyan-500/40">
@@ -60,7 +60,7 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, scale: 0.92, rotate: -2 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1, delay: 0.4, ease }}
+          transition={{ duration: 0.7, delay: 0.15, ease }}
           className="relative mx-auto w-full max-w-md px-2 sm:px-0"
         >
           <div className="absolute -inset-px rounded-3xl bg-gradient-to-br from-accent/40 via-transparent to-accent2/40 blur-sm" />

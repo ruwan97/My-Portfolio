@@ -5,10 +5,10 @@ export function Reveal({ children, delay = 0, className = '' }: { children: Reac
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 28, filter: 'blur(6px)' }}
-      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
@@ -56,7 +56,7 @@ export function Counter({ to, suffix = '' }: { to: number; suffix?: string }) {
 
 export function Typewriter({ words }: { words: string[] }) {
   const [i, setI] = useState(0)
-  const [text, setText] = useState('')
+  const [text, setText] = useState(words[0]) // starts fully typed so the first paint matches the page
   const [del, setDel] = useState(false)
   useEffect(() => {
     const word = words[i % words.length]
