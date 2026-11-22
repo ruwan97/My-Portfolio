@@ -41,7 +41,7 @@ export function Nav() {
       >
         <nav className={`flex w-full max-w-5xl items-center justify-between rounded-2xl px-4 py-2.5 transition-all duration-300 ${scrolled ? 'border border-white/10 bg-[#0b0d14]/90 shadow-lg shadow-black/40 backdrop-blur-xl' : 'border border-transparent'}`}>
           <a href="#top" className="font-display text-lg font-bold tracking-tight text-white">
-            ruwan<span className="text-accent">.</span>dev
+            Ruwan<span className="text-accent"> </span>Chamikara
           </a>
           <ul className="hidden items-center gap-1 md:flex">
             {links.map((l) => (
