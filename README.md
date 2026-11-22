@@ -18,6 +18,9 @@ You can edit it straight from the GitHub mobile app or github.com — every push
 2. Repo → **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 3. Push to `main`. The workflow in `.github/workflows/deploy.yml` builds and publishes the site.
 
+## Firebase Hosting (mirror)
+Also deployed to https://ruwan-chamikara.web.app by the same workflow, once the `FIREBASE_SERVICE_ACCOUNT` repo secret is set.
+
 ## Run locally
 ```bash
 npm install
